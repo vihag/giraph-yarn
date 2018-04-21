@@ -1,0 +1,58 @@
+<configuration scan="true" scanPeriod="30 seconds">
+
+  <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>test - %date [%thread] %-5level %logger{36} - %message%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>/home/vihaggupta/giraph/odlinks.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- daily rollover -->
+      <fileNamePattern>test-framework.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+
+      <!-- keep 30 days' worth of history -->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%date %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <property name="USAGE_FILE_NAME" value="odlinks-${ipAddress}.log" />
+
+  <appender name="USAGE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>/home/vihaggupta/giraph/${USAGE_FILE_NAME}</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- daily rollover -->
+      <fileNamePattern>${USAGE_FILE_NAME}.%d{yyyy-MM-dd}.rolled.log.gz</fileNamePattern>
+      <!-- keep 30 days' worth of history -->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="FILE" />
+  </appender>
+
+  <appender name="ASYNC_USAGE" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="USAGE" />
+  </appender>
+
+  <logger name="org.apache.http" level="ERROR" />
+
+  <logger name="com.noob" level="INFO" />
+  <logger name="com.apache.giraph" level="INFO" />
+
+  <root level="INFO">
+    <appender-ref ref="ASYNC" />
+  </root>
+
+</configuration>

@@ -1,0 +1,53 @@
+2018-03-31 15:35:09 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-03-31 15:35:09 INFO  ConfigurationUtils:336 - No edge input format specified. Ensure your InputFormat does not require one.
+2018-03-31 15:35:09 INFO  ConfigurationUtils:361 - No edge output format specified. Ensure your OutputFormat does not require one.
+2018-03-31 15:35:09 INFO  ConfigurationUtils:402 - Setting custom argument [giraph.SplitMasterWorker] to [false] in GiraphConfiguration
+2018-03-31 15:35:09 INFO  ConfigurationUtils:402 - Setting custom argument [giraph.logLevel] to [error] in GiraphConfiguration
+2018-03-31 15:35:09 INFO  ConfigurationUtils:402 - Setting custom argument [sourceId] to [758963] in GiraphConfiguration
+2018-03-31 15:35:09 INFO  ConfigurationUtils:402 - Setting custom argument [giraph.useBigDataIOForMessages] to [true] in GiraphConfiguration
+2018-03-31 15:35:09 INFO  GiraphYarnClient:184 - Final output path is: file:/Users/vihaggupta/od_routes
+2018-03-31 15:35:09 INFO  GiraphYarnClient:117 - Running Client
+2018-03-31 15:35:09 INFO  RMProxy:98 - Connecting to ResourceManager at /0.0.0.0:8032
+2018-03-31 15:35:09 INFO  GiraphYarnClient:217 - Got node report from ASM for, nodeId=192.168.1.77:54519, nodeAddress 192.168.1.77:8042, nodeRackName /default-rack, nodeNumContainers 0
+2018-03-31 15:35:09 INFO  GiraphYarnClient:251 - Defaulting per-task heap size to 1024MB.
+2018-03-31 15:35:09 INFO  GiraphYarnClient:132 - Obtained new Application ID: application_1522481700487_0001
+2018-03-31 15:35:09 INFO  deprecation:1049 - mapred.job.id is deprecated. Instead, use mapreduce.job.id
+2018-03-31 15:35:09 INFO  GiraphYarnClient:487 - Set the environment for the application master
+2018-03-31 15:35:09 INFO  GiraphYarnClient:490 - Environment for AM :{CLASSPATH=${CLASSPATH}:./*:$HADOOP_CONF_DIR:$HADOOP_COMMON_HOME/share/hadoop/common/*:$HADOOP_COMMON_HOME/share/hadoop/common/lib/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/*:$HADOOP_HDFS_HOME/share/hadoop/hdfs/lib/*:$HADOOP_YARN_HOME/share/hadoop/yarn/*:$HADOOP_YARN_HOME/share/hadoop/yarn/lib/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*}
+2018-03-31 15:35:09 INFO  GiraphYarnClient:507 - buildLocalResourceMap ....
+2018-03-31 15:35:09 INFO  YarnUtils:160 - Registered file in LocalResources :: file:/Users/vihaggupta/giraph_yarn_jar_cache/application_1522481700487_0001/giraph-conf.xml
+2018-03-31 15:35:09 INFO  GiraphYarnClient:454 - LIB JARS :
+2018-03-31 15:35:09 INFO  YarnUtils:102 - Class path name .
+2018-03-31 15:35:09 INFO  YarnUtils:112 - base path checking .
+2018-03-31 15:35:09 INFO  YarnUtils:102 - Class path name null
+2018-03-31 15:35:09 INFO  YarnUtils:112 - base path checking null
+2018-03-31 15:35:09 INFO  YarnUtils:102 - Class path name null
+2018-03-31 15:35:09 INFO  YarnUtils:112 - base path checking null
+2018-03-31 15:35:09 INFO  GiraphYarnClient:139 - ApplicationSumbissionContext for GiraphApplicationMaster launch container is populated.
+2018-03-31 15:35:09 INFO  GiraphYarnClient:153 - Submitting application to ASM
+2018-03-31 15:35:09 INFO  YarnClientImpl:251 - Submitted application application_1522481700487_0001
+2018-03-31 15:35:09 INFO  GiraphYarnClient:156 - Got new appId after submission :application_1522481700487_0001
+2018-03-31 15:35:09 INFO  GiraphYarnClient:163 - GiraphApplicationMaster container request was submitted to ResourceManager for job: Giraph: com.noob.odlinks.ODRoutesV4
+2018-03-31 15:35:10 INFO  GiraphYarnClient:423 - Giraph: com.noob.odlinks.ODRoutesV4, Elapsed: 0.90 secs
+2018-03-31 15:35:10 INFO  GiraphYarnClient:424 - appattempt_1522481700487_0001_000001, State: ACCEPTED, Containers used: 0
+2018-03-31 15:35:13 ERROR GiraphYarnClient:401 - Giraph: com.noob.odlinks.ODRoutesV4 reports FAILED state, diagnostics show: Application application_1522481700487_0001 failed 2 times due to AM Container for appattempt_1522481700487_0001_000002 exited with  exitCode: 1
+Failing this attempt.Diagnostics: [2018-03-31 15:35:13.624]Exception from container-launch.
+Container id: container_1522481700487_0001_02_000001
+Exit code: 1
+
+[2018-03-31 15:35:13.627]Container exited with a non-zero exit code 1. Error file: prelaunch.err.
+Last 4096 bytes of prelaunch.err :
+Last 4096 bytes of gam-stderr.log :
+Error: Could not find or load main class org.apache.giraph.yarn.GiraphApplicationMaster
+
+
+[2018-03-31 15:35:13.628]Container exited with a non-zero exit code 1. Error file: prelaunch.err.
+Last 4096 bytes of prelaunch.err :
+Last 4096 bytes of gam-stderr.log :
+Error: Could not find or load main class org.apache.giraph.yarn.GiraphApplicationMaster
+
+
+For more detailed output, check the application tracking page: http://Vihags-MacBook-Pro.local:8088/cluster/app/application_1522481700487_0001 Then click on links to logs of each attempt.
+. Failing the application.
+2018-03-31 15:35:13 INFO  GiraphYarnClient:312 - Cleaning up HDFS distributed cache directory for Giraph job.
+2018-03-31 15:35:13 INFO  GiraphYarnClient:332 - Completed Giraph: com.noob.odlinks.ODRoutesV4: FAILED, total running time: 0 minutes, 3 seconds.
